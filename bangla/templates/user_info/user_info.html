@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> Welcome  !! </h1>
+
+<form action="/user/info/" method="post">
+        {% csrf_token %}
+        What is your Name? <input type="text" name="user_name">
+        <input type="submit" value="Ok">
+
+</form>
+    {% if name %}
+       <p>Hey Welcome here{{ name }}, How are you?</p>
+    {% endif %}
+
+{% endblock %}
